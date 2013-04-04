@@ -6,6 +6,7 @@ A very robust light-weight paginator based on [leaf](http://github.com/c7/leaf) 
 
 * Does not fiddle with Array, ActiveRecord, or anything else. It is self-contained.
 * Compatible with both [will_paginate](http://github.com/mislav/will_paginate) and [kaminari](http://github.com/amatsuda/kaminari) API.
+* Never raise an exception! Negative pages will simple become positive, out of bounds simple means to the last page, etc...
 
 # Features
 

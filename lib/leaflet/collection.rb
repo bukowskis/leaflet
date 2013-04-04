@@ -88,6 +88,14 @@ module Leaflet
       current_page < total_pages ? (current_page + 1) : nil
     end
 
+    def first_page?
+      current_page == 1
+    end
+
+    def last_page?
+      current_page == total_pages
+    end
+
     def as_json(options = {})
       { total_entries: total_entries, total_count: total_count, per_page: per_page, limit_value: limit_value, current_page: current_page, offset: offset, offset_value: offset_value total_pages: total_pages, records: self.to_a }
     end
