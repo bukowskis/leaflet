@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bukowskis/leaflet.png)](https://travis-ci.org/bukowskis/leaflet)
+
 # Leaflet
 
 A very robust light-weight paginator based on [leaf](http://github.com/c7/leaf) which is based on [will_paginate](http://github.com/mislav/will_paginate).
