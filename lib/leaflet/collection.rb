@@ -105,7 +105,7 @@ module Leaflet
         current_page: current_page,
         offset: offset,
         offset_value: offset_value,
-        otal_pages: total_pages,
+        total_pages: total_pages,
         records: self.to_a
       }
     end
