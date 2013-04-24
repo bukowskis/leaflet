@@ -1,3 +1,4 @@
+require 'positify'
 require 'leaflet/configuration'
 
 module Leaflet
@@ -39,21 +40,21 @@ module Leaflet
     # –––––––––––––––––––––––
 
     def total_entries
-      Leaflet.positify {
+      Positify.it {
         @total_entries ||= self.size
       }
     end
     alias :total_count :total_entries  # Kaminari
 
     def per_page
-      Leaflet.positify(max: Leaflet.config.max_per_page) {
+      Positify.it(max: Leaflet.config.max_per_page) {
         @per_page ||= Leaflet.config.default_per_page
       }
     end
     alias :limit_value :per_page  # Kaminari
 
     def current_page
-      Leaflet.positify(max: total_pages) {
+      Positify.it(max: total_pages) {
         @current_page ||= 1
       }
     end
@@ -68,7 +69,7 @@ module Leaflet
     alias :offset_value :offset  # Kaminari
 
     def total_pages
-      Leaflet.positify {
+      Positify.it {
         total_entries.zero? ? 1 : (total_entries / per_page.to_f).ceil
       }
     end

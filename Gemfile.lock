@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    leaflet (0.0.1)
+    leaflet (0.0.3)
+      positify (~> 0.0.1)
 
 GEM
   remote: http://rubygems.org/
@@ -21,6 +22,7 @@ GEM
     listen (0.7.3)
     lumberjack (1.0.3)
     method_source (0.8.1)
+    positify (0.0.1)
     pry (0.9.12)
       coderay (~> 1.0.5)
       method_source (~> 0.8)

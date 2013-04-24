@@ -6,13 +6,13 @@ module Leaflet
     attr_writer :default_per_page, :max_per_page
 
     def default_per_page
-      Leaflet.positify {
+      Positify.it {
         @default_per_page ||= 20
       }
     end
 
     def max_per_page
-      Leaflet.positify {
+      Positify.it {
         @max_per_page ||= 30
       }
     end
