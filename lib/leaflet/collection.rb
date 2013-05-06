@@ -40,9 +40,7 @@ module Leaflet
     # –––––––––––––––––––––––
 
     def total_entries
-      Positify.it {
-        @total_entries ||= self.size
-      }
+      (@total_entries ||= self.size).to_i.abs
     end
     alias :total_count :total_entries  # Kaminari
 

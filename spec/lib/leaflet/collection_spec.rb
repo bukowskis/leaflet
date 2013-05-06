@@ -33,6 +33,10 @@ describe Leaflet::Collection do
       it 'corresponds to the records size' do
         collection.total_entries.should == 5
       end
+
+      it 'can be zero' do
+        Leaflet::Collection.new([]).total_entries.should == 0
+      end
     end
 
     describe '#total_count' do
@@ -73,6 +77,10 @@ describe Leaflet::Collection do
       it 'is calculated from the passed in total' do
         collection.total_pages.should == 10
       end
+
+      it 'cannot be negative' do
+        Leaflet::Collection.new([], total: -5).total_entries.should == 5
+      end
     end
 
     describe '#per_page' do
@@ -93,5 +101,4 @@ describe Leaflet::Collection do
       end
     end
   end
-
 end
