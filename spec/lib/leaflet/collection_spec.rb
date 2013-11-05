@@ -101,4 +101,25 @@ describe Leaflet::Collection do
       end
     end
   end
+
+  context 'decoration' do
+    let(:decorated_entry1) { double(:decorated_entry1) }
+    let(:decorated_entry2) { double(:decorated_entry2) }
+    let(:entry1)           { double(:entry, decorate: decorated_entry1) }
+    let(:entry2)           { double(:entry, decorate: decorated_entry2) }
+    let(:array)            { [entry1, entry2] }
+    let(:collection)       { Leaflet::Collection.new(array) }
+
+    it 'decorates all objects' do
+      decorated_collection = collection.decorate
+      decorated_collection.first.should be decorated_entry1
+      decorated_collection.last.should  be decorated_entry2
+    end
+
+    it 'is not destructive' do
+      collection.decorate
+      collection.first.should be entry1
+      collection.last.should  be entry2
+    end
+  end
 end

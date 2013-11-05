@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    leaflet (0.0.3)
+    leaflet (0.0.5)
       positify (~> 0.0.1)
 
 GEM
