@@ -6,11 +6,15 @@ module Leaflet
 
     PartialCollectionCannotBePaginated = Class.new(StandardError)
 
+    attr_accessor :success
+
     # ––––––––––––––
     # Initialization
     # ––––––––––––––
 
     def initialize(*args)
+      @success = true
+
       if args.size == 1
         # An Array was passed in. "Convert" it to a Collection.
         replace args.shift
@@ -38,6 +42,10 @@ module Leaflet
     # –––––––––––––––––––––––
     # Public Instance Getters
     # –––––––––––––––––––––––
+
+    def success?
+      !!success
+    end
 
     def total_entries
       (@total_entries ||= self.size).to_i.abs
