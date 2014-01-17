@@ -96,7 +96,7 @@ module Leaflet
     end
 
     def as_json(options = {})
-      { 
+      {
         total_entries: total_entries,
         total_count: total_count,
         per_page: per_page,
