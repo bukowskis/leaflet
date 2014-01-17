@@ -26,12 +26,12 @@ gem install leaflet
 
 ```ruby
 # Converting an Array into a paginatable Collection
-complete_collection = Leafet::Collection.new my_array
+complete_collection = Leaflet::Collection.new my_array
 complete_collection.paginate(page: 5, per_page: 3)    # <-- Returns an Array with the paginated subset of the original Array
 
 # Creating a custom Collection
 my_array_subset = [:d, :e, :f]  # E.g. fetched from Redis according to page and per_page
-collection = Leafet::Collection.new my_array_subset, total: 26, page:2, per_page: 3
+collection = Leaflet::Collection.new my_array_subset, total: 26, page:2, per_page: 3
 ```
 
 # Credits
